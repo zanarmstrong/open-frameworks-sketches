@@ -25,9 +25,6 @@ void ofApp::setup(){
     ofSort(colors);
     
     for (int i = 0; i < width * height; i++){
-        if((int)(colors[i]) > 100){
-            cout << (int)(colors[i]) << endl;
-        }
         pixFinal[i] = colors[colors.size() - i];
     }
     
