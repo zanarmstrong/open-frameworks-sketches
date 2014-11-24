@@ -39,10 +39,15 @@ bool ofApp::orderPixels(ofVec2f a, ofVec2f b){
 }
 //
 
+bool ofApp::reverseOrderPixels(ofVec2f a, ofVec2f b){
+    bool k = orderPixels(a, b);
+    return !k;
+}
+
 //--------------------------------------------------------------
 void ofApp::setup(){
 
-    baseImage.loadImage("bwEinstein.png");
+    baseImage.loadImage("bwFlower.png");
     baseImage.setImageType(OF_IMAGE_GRAYSCALE);
     unsigned char * pixOrig = baseImage.getPixels();
     
@@ -71,7 +76,7 @@ void ofApp::setup(){
     }
     
     // sort the ordered pairs of pixels into a spiral, using function declared above
-    ofSort(coords, orderPixels);
+    ofSort(coords, reverseOrderPixels);
     
     // walk through the vector of ordered pixels and assign colors in order
     for (int i = 0; i < colors.size(); i++){
