@@ -20,6 +20,9 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
     
         static bool orderPixels(ofVec2f a, ofVec2f b);
+        static bool reverseOrderPixels(ofVec2f a, ofVec2f b);
+    
+    
     
     ofImage baseImage;
     ofImage finalImage;
